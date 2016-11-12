@@ -88,8 +88,10 @@ class Yelp extends OAuth1
     	$this->removeState('requestToken');
     	$tokenConfig = [
     		'class' => OAuthToken::className(),
-    		'tokenParamKey' => $this->token,
-    		'tokenSecretParamKey' => $this->tokenSecret,
+    		'params' => [
+	    		'oauth_token' => $this->token,
+	    		'oauth_token_secret' => $this->tokenSecret
+    		]
     	];
     	$token = Yii::createObject($tokenConfig);
     	$this->setAccessToken($token);
