@@ -75,7 +75,7 @@ class Yelp extends OAuth1
     /**
      * @inheritdoc
      */
-    public function buildAuthUrl()
+    public function buildAuthUrl(OAuthToken $requestToken = null, array $params = [])
     {
     	return null;
     }
